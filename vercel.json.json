@@ -1,0 +1,27 @@
+{
+    "version": 2,
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "/api/$1",
+        "headers": {
+          "Cache-Control": "s-maxage=60, stale-while-revalidate=30"
+        }
+      },
+      {
+        "src": "/static/(.*)",
+        "dest": "/static/$1",
+        "headers": {
+          "Cache-Control": "public, max-age=31536000, immutable"
+        }
+      },
+      {
+        "src": "/public/(.*)",
+        "dest": "/public/$1",
+        "headers": {
+          "Cache-Control": "public, max-age=3600"
+        }
+      }
+    ]
+  }
+  
